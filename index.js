@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.send("hey");
 });
 io.on("connection", (socket) => {
-  console.log(`user connected ${socket.id}`);
+ 
   socket.on("joined", ({ name }) => { 
     socket.broadcast.emit("new_user", { name });
   });
